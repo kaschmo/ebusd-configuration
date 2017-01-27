@@ -1,0 +1,20 @@
+#name,type/templates,divider/values,unit,comment
+# Bartl TEM,,,,
+type,HEX,,,Datentyp
+unit,HEX,,,Einheit
+maxs,SIN,,,Maximum
+mins,SIN,,,Minimum
+command,TEM_P;type;unit,,,Kommando
+parameter1,command;maxs;mins,,,Parameter
+parameter2,command;type;type,,,Parameter
+temp10,SIN,10,°C,Temperatur (Teiler 10)
+temp2,D2B,,°C,Temperatur (Teiler 256)
+btime,BTI,,,Binary Time
+bdate,BDA,,,Binary Date
+status,UCH,,,Status
+hcd100,HCD,100,h,Betriebsstunden (Teiler 10)
+tp_2h,BI0;BI1;BI2;BI3;BI4;BI5;BI6;BI7,,,Zeitprogramm 2 Stunden
+tp_8h,tp_2h;tp_2h;tp_2h;tp_2h,,,Zeitprogramm 8 Stunden
+tp_20h,tp_2h;tp_2h;tp_2h;tp_2h;tp_2h;tp_2h;tp_2h;tp_2h;tp_2h;tp_2h,,,Zeitprogramm 20 Stunden
+tp_status,IGN:1;UCH;IGN:8,,,Modus Zeitprogramm
+tp_week,tp_20h;tp_20h;tp_20h;tp_20h;tp_20h;tp_20h;tp_20h;tp_8h,,,Zeitprogramm Woche

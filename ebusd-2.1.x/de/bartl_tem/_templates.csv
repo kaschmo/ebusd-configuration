@@ -1,9 +1,10 @@
 #name,type/templates,divider/values,unit,comment
 # Bartl TEM,,,,
 type,UCH,0x00=none;0x02=on-off;0x04=Zeit;0x09=selection;0x0d=Temperatur;0x40=Dauer;0x4d=TemperaturSchwelle;0x8d=TemperaturSoll;0xc0=range,,Datentyp
-unit,UCH,0x00=none;0x02=°C;0x04=K;0x08=%;0x0a=h:0x0c=min;0x2a=hh:mm,,Einheit
+unit,UCH,0x00=none;0x02=°C;0x04=K;0x08=%;0x0a=h;0x0c=min;0x2a=hh:mm,,Einheit
 maxs,SIN,,,Maximum
 mins,SIN,,,Minimum
+wd,BDY,,,Weekday
 command,TEM_P;type;unit,,,Kommando
 parameter1,command;maxs;mins,,,Parameter
 parameter2,command;UCH;UCH,,,Parameter
@@ -19,8 +20,8 @@ max_temp2,temp2,,,Maximum
 min_temp2,temp2,,,Minimum
 max_time,MIN,,,Maximum
 min_time,MIN,,,Minimum
-max_wd,BDY,,,Maximum
-min_wd,BDY,,,Minimum
+max_wd,wd;IGN:1,,,Maximum
+min_wd,wd;IGN:1,,,Minimum
 parameter_temp10,command;max_temp10;min_temp10,,,ParameterTemp10
 parameter_temp10K,command;max_temp10K;min_temp10K,,,ParameterTemp10K
 parameter_temp2,command;max_temp2;min_temp2,,,ParameterTemp2

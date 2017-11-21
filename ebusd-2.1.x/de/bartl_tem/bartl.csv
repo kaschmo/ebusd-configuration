@@ -173,3 +173,7 @@ r,,status,Status Heizkreisregelung 02-051,,,,85000a,parameters,,parameter1,,,,st
 *r,hk_param1,,,,15,0621,,,,,,,,,,,,,,,,,,,,,,,,,
 # Heizkreis Menü Einstellungen MasterFB (Fachmann),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 *r,hk_param2,,,,15,0621,,,,,,,,,,,,,,,,,,,,,,,,,
+# Heizkreis Relaisausgänge,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+*r,hk_relais,,,,15,0621,75,,,,,,,,,,,,,,,,,,,,,,,,
+r,,hk_pumpe,Heizkreispumpe 01-020,,,,80000a,parameters,,parameter1,,,,status,,status,,,Stellgröße für eine Heizkreispumpe,,,,,,,,,,,,
+r,,hk_mischer,Mischer 01-021,,,,81000a,parameters,,parameter_range,,,,status,,range,,%,Stellgröße für ein Heizkreis Mischventil,,,,,,,,,,,,

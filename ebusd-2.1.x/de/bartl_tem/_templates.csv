@@ -40,7 +40,7 @@ parameter_wd,command;max_wd;min_wd,,,ParameterWeekday
 parameter_range,command;max_range;min_range,,,ParameterRange
 btime,BTI,,,Binary Time
 bdate,BDA,,,Binary Date
-status,UCH,,,Status
+status,SIN,,,Status
 hcd100,HCD,100,h,Betriebsstunden (Teiler 10)
 tp_2h,BI0;BI1;BI2;BI3;BI4;BI5;BI6;BI7,,,Zeitprogramm 2 Stunden
 tp_8h,tp_2h;tp_2h;tp_2h;tp_2h,,,Zeitprogramm 8 Stunden

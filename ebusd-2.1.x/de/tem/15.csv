@@ -210,6 +210,8 @@ r,,status,Status Heizkreisregelung 02-051,,,,85000a,parameters,,parameter1,,,,st
 [expertlevel]r,,zone_temperatur,Temperatur Zonenzuordnung 03-096,,,,97000a,parameters,,parameter1,,,,status,,status,,,,,,,,,,,,,,,
 [expertlevel]r,,temp_anlage_min,Minimale Anlagetemperatur 03-110,,,,98000a,parameters,,parameter_temp10,,,,temp,,temp10,,,,,,,,,,,,,,,
 [expertlevel]r,,abschaltdifferenz,Abschaltdifferenz Anlagetemperatur 03-111,,,,99000a,parameters,,parameter_temp10,,,,temp,,temp10,,,,,,,,,,,,,,,
+*w,hk_param2,,,,10,0623,63,,,,,,,,,,,,,,,,,,,,,,,,
+[expertlevel]w,,temp_behaglichkeit,Behaglichkeit 03-058,,,,91000a,temp,,temp10,,,,,,,,,,,,,,,,,,,,,
 *r,hk_param2,,,,15,0621,67,,,,,,,,,,,,,,,,,,,,,,,,
 [expertlevel]r,,proportionalbereich_mischer,Proportionalbereich Mischerregelung 07-000,,,,80000a,parameters,,parameter_temp10,,,,temp,,temp10,,,,,,,,,,,,,,,
 [expertlevel]r,,we_vl_soll_überhöhung,Wärmeerzeuger Überhöhung Vorlaufsollwert 07-001,,,,81000a,parameters,,parameter_temp10,,,,temp,,temp10,,,,,,,,,,,,,,,

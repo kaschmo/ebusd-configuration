@@ -46,4 +46,4 @@ tp_2h,BI0;BI1;BI2;BI3;BI4;BI5;BI6;BI7,,,Zeitprogramm 2 Stunden
 tp_8h,tp_2h;tp_2h;tp_2h;tp_2h,,,Zeitprogramm 8 Stunden
 tp_20h,tp_2h;tp_2h;tp_2h;tp_2h;tp_2h;tp_2h;tp_2h;tp_2h;tp_2h;tp_2h,,,Zeitprogramm 20 Stunden
 tp_status,IGN:1;UCH;IGN:8,,,Modus Zeitprogramm
-tp_week,tp_20h;tp_20h;tp_20h;tp_20h;tp_20h;tp_20h;tp_20h;tp_8h,,,Zeitprogramm Woche
+tp_week,tp_20h;tp_20h;tp_20h;tp_20h;tp_20h;tp_20h;tp_20h;tp_20h;tp_8h,,,Zeitprogramm Woche

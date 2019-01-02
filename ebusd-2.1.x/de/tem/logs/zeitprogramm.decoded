@@ -1,0 +1,103 @@
+Entschlüsselung Zeitprogramm:
+In tp0 steht die Anzahl der verschiedenen Programme, die Anzahl der Tagblocks sowie die
+Zuordnung der Programme zu den verschiedenen Tagen:
+
+011006230e03be004a 03 03 00000101020203 00 = 8 -> Mo, Di ... Mi, Do ... Fr, Sa ... So
+                   |  |  |              | 
+                   |  |  |              unbekannt(immer 00?)
+                   |  |  |
+                   |  |  MoDiMiDoFrSaSo
+                   |  |  Zuteilung Tag zu Programm
+                   |  |
+                   |  Anzahl der Gruppen > 1 Tage = Tagblocks
+                   |
+                   Anzahl der verschiedenen Programme: z.B. 06 = 7 Programme
+
+Anordnung der Programme in den Blocks tp_1 bis tp_9 (in Kette):
+Jeweils 12 bytes pro Programm (00:00 - 24:00), 1 bit pro 15 minuten.
+Durchgehende aneinander gekettet von tp1 bis tp9,
+d.h. die ersten 2 bytes von tp2 gehören noch zum ersten Programm usw.
+
+Je nachdem, wieviele verschiedene Programme vorhanden sind, werden diese nach folgendem Muster wiederholt:
+1 Programme(00): 0 - 0 - 0 - 0 - 0 - 0 - 0
+2 Programme(01): 0 - 1 - 0 - 1 - 0 - 0 - 0
+3 Programme(02): 0 - 1 - 2 - 1 - 0 - 0 - 0
+4 Programme(03): 0 - 1 - 2 - 3 - 2 - 1 - 0
+5 Programme(04): 0 - 1 - 2 - 3 - 4 - 3 - 2
+6 Programme(05): 0 - 1 - 2 - 3 - 4 - 5 - 4
+7 Programme(06): 0 - 1 - 2 - 3 - 4 - 5 - 6
+
+
+HZG1
+011506210403bd004a / 06 bd01 1e00 0100 = 1
+0115062204 03bd004a 0a01020000000000010100 = 1 lesen
+011006230e 03bd004a   01020000000000010100 = 1 schreiben
+
+HZG2
+011506210403be004a / 06 be01 1e00 0100 = 1
+011506220403be004a / 0a03010000000001020300 = 1 lesen
+011006230e03be004a     03010000000003020100 = 1 schreiben
+
+HZG3
+011506210403bf004a / 06 bf01 1e00 0100 = 1
+011506220403bf004a / 0a00010000000000000000 = 1 lesen
+011006230e03bf004a     00010000000000000000 = 1 schreiben
+
+Legio
+011506210405be004e / 06 be02 1e00 0300 = 2
+011506220405be004e / 0a00010000000000000000 = 2 lesen
+011006230e05be004e     00010000000000000000 = 2 schreiben
+
+WW
+011506210405bd004e / 06 bd02 1e00 0300 = 1
+011506220405bd004e / 0a00010000000000000000 = 1: ww_timeprogramm tp0 lesen
+011006230e05bd004e     00010000000000000000 = 1 schreiben
+
+Zirk
+011506210405c0004e / 06 c002 1e00 0300 = 1
+011506220405c0004e / 0a00010000000000000000 = 1 lesen
+011006230e05c0004e     00010000000000000000 = 1 schreiben
+
+011506220403be004a / 0a  0303 00000101020203 00 = 12: hk_timeprogramm tp0_hzg2
+011506220403be014a / 0a  00000007000000000000 = 15: hk_timeprogramm tp1_hzg2 - 0 
+011506220403be024a / 0a 0000 0000000300000000 = 15: hk_timeprogramm tp2_hzg2 - 1 
+011506220403be034a / 0a 00000000 000000ff0f00 = 15: hk_timeprogramm tp3_hzg2 - 2 
+011506220403be044a / 0a 000000000000 000000f0 = 15: hk_timeprogramm tp4_hzg2 - 3 
+011506220403be054a / 0a ffffffffffffff00 0000 = 15: hk_timeprogramm tp5_hzg2 - 2 
+011506220403be064a / 0a  00ff0f00000000000000 = 15: hk_timeprogramm tp6_hzg2
+011506220403be074a / 0a  00000003000000000000 = 15: hk_timeprogramm tp7_hzg2 - 1 
+011506220403be084a / 0a 0000 0000000700000000 = 15: hk_timeprogramm tp8_hzg2 - 0 
+011506220403be094a / 04 00000000 = 15: hk_timeprogramm tp9_hzg2
+
+011506220403bd004a / 0a 0102 00000000000101 00 = 3: hk_timeprogramm tp0_hzg1
+011506220403bd014a / 0a  0000ffffffffffffffff = 3: hk_timeprogramm tp1_hzg1 - 0 
+011506220403bd024a / 0a ff00 0000e0ffffffffff = 3: hk_timeprogramm tp2_hzg1 - 1 
+011506220403bd034a / 0a ffffff01 0000ffffffff = 2: hk_timeprogramm tp3_hzg1 - 0
+011506220403bd044a / 0a ffffffffff00 0000e0ff = 3: hk_timeprogramm tp4_hzg1 - 1
+011506220403bd054a / 0a ffffffffffffff01 0000 = 3: hk_timeprogramm tp5_hzg1 - 0
+011506220403bd064a / 0a  ffffffffffffffffff00 = 3: hk_timeprogramm tp6_hzg1 
+011506220403bd074a / 0a  0000ffffffffffffffff = 3: hk_timeprogramm tp7_hzg1 - 0
+011506220403bd084a / 0a ff00 0000ffffffffffff = 3: hk_timeprogramm tp8_hzg1 - 0
+011506220403bd094a / 04 ffffff00 = 3: hk_timeprogramm tp9_hzg1
+
+
+011006230e03bd004a 0202 0000000002010100 = 1
+011006230e03bd014a  0000ffffffffffffffff = 1 - 0
+011006230e03bd024a ff00 0000e0ffffffffff = 1 - 1
+011006230e03bd034a ffffff01 0000ff0300e0 = 1 - 2
+011006230e03bd044a ffffffffff00 0000e0ff = 1 - 1
+011006230e03bd054a ffffffffffffff01 0000 = 1 - 0
+011006230e03bd064a  ffffffffffffffffff00 = 1
+011006230e03bd074a  0000ffffffffffffffff = 1 - 0
+011006230e03bd084a ff00 0000ffffffffffff = 1 - 0
+011006230803bd094a ffffff00 = 1
+
+011006230e03be004a 00 01 00000000000000 00 = 1 -> alle Tage gleich
+011006230e03be004a 06 00 00010203040506 00 = 7 -> alle Tage verschieden
+011006230e03be004a 05 01 00000203040501 00 = 2 -> Mo, Di ... Mi ... Do ... Fr ... Sa ... So
+011006230e03be004a 04 01 00000003040201 00 = 3 -> Mo, Di, Mi ... Do ... Fr ... Sa ... So
+011006230e03be004a 03 01 00000000030201 00 = 4 -> Mo, Di, Mi, Do ... Fr ... Sa ... So
+011006230e03be004a 04 01 00010000040302 00 = 5 -> Mo, Mi, Do ... Di ... Fr ... Sa ... So 
+011006230e03be004a 03 02 00010000030102 00 = 6 -> Mo, Mi, Do ... Di, Sa ... Fr ... So 
+011006230e03bd004a 02 02 00000000020101 00 = 1 -> Mo, Di, Mi, Do ... Fr ... Sa, So
+011006230e03be004a 03 03 00000101020203 00 = 8 -> Mo, Di ... Mi, Do ... Fr, Sa ... So

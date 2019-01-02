@@ -171,6 +171,7 @@ r,,status,Status Warmwasserregelung 02-052,,,,82000e,parameters,,parameter1,,,,t
 [expertlevel]r,,ladedauer_max,Maximale Warmwasser Ladedauer 05-081 (Prüfen!),,,,95000e,parameters,,parameter1,,,,hours,,SIN,2,h,Wird die eingestellte Maximalladedauer überschritten wird der Ladevorgang unterbrochen und erst wieder gestartet wenn die Einschaltdifferenz (05-000) zur aktuellen Warmwassertemperatur überschritten wird.,,,,,,,,,,,,
 [expertlevel]r,,nachladedauer_max,Maximale Nachladedauer bei Ladungsabbruch 05-082 (Prüfen!),,,,96000e,parameters,,parameter1,,,,hours,,SIN,2,h,Wird bei Warmwassermode (05-011) 6 oder 7 die Nachladung aktiviert kann diese mit der maximalen Nachladezeit nach der hier eingestellten Zeit beendet werden. Bei Einstellung 0 wird die Nachladung gar nicht aktiviert.,,,,,,,,,,,,
 *w,ww_param2,,,,10,0623,65,,,,,,,,,,,,,,,,,,,,,,,,
+[expertlevel]w,,zirkulationspumpe,Zirkulationspumpe 05-006,,,,8a000e,zirkstatus,,status,,,,,,,,,,,,,,,,,,,,,
 [expertlevel]w,,temp_soll,Normal Warmwassertemperatur 05-051,,,,92000e,ww_temp,,temp10,,,,,,,,,,,,,,,,,,,,,
 # Warmwasser Relaisausgänge,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 *r,ww_relais,,,,15,0621,76,,,,,,,,,,,,,,,,,,,,,,,,
